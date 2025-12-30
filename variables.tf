@@ -15,3 +15,7 @@ variable "rg_name" {
 variable "storage_image_reference_id" {
   default = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-roboshop/providers/Microsoft.Compute/images/local-devops-practice"
 }
+
+variable "network_security_group_id" {
+  default = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-roboshop/providers/Microsoft.Network/networkSecurityGroups/roboshop-nsg"
+}
