@@ -19,6 +19,7 @@ resource "azurerm_network_interface" "frontend" {
     name                          = "frontend-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.frontend.id
   }
 }
 
@@ -67,6 +68,8 @@ resource "azurerm_network_interface" "mongodb" {
     name                          = "mongodb-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.mongodb.id
+    
   }
 }
 
@@ -115,6 +118,7 @@ resource "azurerm_network_interface" "catalogue" {
     name                          = "catalogue-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.catalogue.id
   }
 }
 
@@ -163,6 +167,7 @@ resource "azurerm_network_interface" "redis" {
     name                          = "redis-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.redis.id
   }
 }
 
@@ -211,6 +216,7 @@ resource "azurerm_network_interface" "user" {
     name                          = "user-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.user.id
   }
 }
 
@@ -259,6 +265,7 @@ resource "azurerm_network_interface" "cart" {
     name                          = "cart-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.cart.id
   }
 }
 
@@ -307,6 +314,7 @@ resource "azurerm_network_interface" "mysql" {
     name                          = "mysql-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.mysql.id
   }
 }
 
@@ -355,6 +363,7 @@ resource "azurerm_network_interface" "shipping" {
     name                          = "shipping-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.shipping.id
   }
 }
 
@@ -403,6 +412,7 @@ resource "azurerm_network_interface" "rabbitmq" {
     name                          = "rabbitmq-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.rabbitmq.id
   }
 }
 
@@ -451,6 +461,7 @@ resource "azurerm_network_interface" "payment" {
     name                          = "payment-nic"
     subnet_id                     = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_publicip.payment.id
   }
 }
 
