@@ -64,7 +64,8 @@ inline = [
     "sudo dnf install -y epel-release",
     "sudo dnf install -y ansible",
     "sudo dnf install python3.12 python3.12-pip -y",
-    "sudo pip3.12 install ansible"
+    "sudo pip3.12 install ansible",
+    "ansible-pull -i localhost, U https://github.com/srikcloud/roboshop-ansible roboshop.yml -e app_name-${var-name} -e env-dev"
     ]
 }
 }
