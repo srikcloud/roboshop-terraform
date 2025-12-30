@@ -4,7 +4,7 @@ module "frontend" {
   location                   = var.location
   name                       = "frontend"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -15,7 +15,7 @@ module "mongodb" {
   location                   = var.location
   name                       = "mongodb"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -26,7 +26,7 @@ module "catalogue" {
   location                   = var.location
   name                       = "catalogue"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -37,7 +37,7 @@ module "redis" {
   location                   = var.location
   name                       = "redis"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -48,7 +48,7 @@ module "user" {
   location                   = var.location
   name                       = "user"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -59,7 +59,7 @@ module "cart" {
   location                   = var.location
   name                       = "cart"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -70,7 +70,7 @@ module "mysql" {
   location                   = var.location
   name                       = "mysql"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -81,7 +81,7 @@ module "shipping" {
   location                   = var.location
   name                       = "shipping"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -92,7 +92,7 @@ module "rabbitmq" {
   location                   = var.location
   name                       = "rabbitmq"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
@@ -103,7 +103,7 @@ module "payment" {
   location                   = var.location
   name                       = "payment"
   rg_name                    = var.rg_name
-  storage_image_reference_id = storage_image_reference_id
+  storage_image_reference_id = var.storage_image_reference_id
   zone_name                  = var.zone_name
   network_security_group_id  = var.network_security_group_id
 }
