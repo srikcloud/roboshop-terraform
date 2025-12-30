@@ -50,24 +50,24 @@ resource "azurerm_virtual_machine" "vm" {
   }
 }
 
-resource "null_resource" "ansible" {
+# resource "null_resource" "ansible" {
 
-connection {
-    type     = "ssh"
-    user     = "azureuser"
-    password = DevOps@123456
-    host     = azurerm_network_interface.privateip.id
-  }
+# connection {
+#     type     = "ssh"
+#     user     = "azureuser"
+#     password = DevOps@123456
+#     host     = azurerm_network_interface.privateip.id
+#   }
 
-provisioner "remote-exec"{
-inline = [
-    "sudo dnf install -y epel-release",
-    "sudo dnf install -y ansible",
-    "sudo dnf install python3.12 python3.12-pip -y",
-    "sudo pip3.12 install ansible"
-    ]
-}
-}
+# provisioner "remote-exec"{
+# inline = [
+#     "sudo dnf install -y epel-release",
+#     "sudo dnf install -y ansible",
+#     "sudo dnf install python3.12 python3.12-pip -y",
+#     "sudo pip3.12 install ansible"
+#     ]
+# }
+# }
 resource "azurerm_dns_a_record" "dns_record" {
   name                = "${var.name}-dev"
   zone_name           = var.zone_name
