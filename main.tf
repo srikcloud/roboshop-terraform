@@ -486,7 +486,7 @@ resource "azurerm_virtual_machine" "payment" {
 resource "azurerm_dns_a_record" "frontend" {
   name                = "frontend-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.frontend.private_ip_address]
 }
@@ -494,7 +494,7 @@ resource "azurerm_dns_a_record" "frontend" {
 resource "azurerm_dns_a_record" "catalogue" {
   name                = "catalogue-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.catalogue.private_ip_address]
 }
@@ -503,7 +503,7 @@ resource "azurerm_dns_a_record" "catalogue" {
 resource "azurerm_dns_a_record" "mongodb" {
   name                = "mongodb-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.mongodb.private_ip_address]
 }
@@ -511,42 +511,42 @@ resource "azurerm_dns_a_record" "mongodb" {
 resource "azurerm_dns_a_record" "redis" {
   name                = "redis-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.redis.private_ip_address]
 }
 resource "azurerm_dns_a_record" "rabbitmq" {
   name                = "rabbitmq-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.rabbitmq.private_ip_address]
 }
 resource "azurerm_dns_a_record" "mysql" {
   name                = "mysql-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.mysql.private_ip_address]
 }
 resource "azurerm_dns_a_record" "user" {
   name                = "user-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.user.private_ip_address]
 }
 resource "azurerm_dns_a_record" "cart" {
   name                = "cart-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.cart.private_ip_address]
 }
 resource "azurerm_dns_a_record" "shipping" {
   name                = "shipping-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.shipping.private_ip_address]
 }
@@ -554,7 +554,7 @@ resource "azurerm_dns_a_record" "shipping" {
 resource "azurerm_dns_a_record" "payment" {
   name                = "payment-dev"
   zone_name           = "srikanth553.store"
-  resource_group_name = rg-devops
+  resource_group_name = "rg-devops"
   ttl                 = 3
   records             = [azurerm_network_interface.payment.private_ip_address]
 }
