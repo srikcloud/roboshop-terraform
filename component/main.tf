@@ -56,7 +56,7 @@ connection {
     type     = "ssh"
     user     = "azureuser"
     password = "DevOps@123456"
-    host     = azurerm_network_interface.privateip.id
+    host     = azurerm_network_interface.privateip.private_ip_address
   }
 
 provisioner "remote-exec"{
