@@ -1,5 +1,5 @@
 variable "ip_configuration_subnet_id" {
-  default = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-devops/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
+  default = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-roboshop/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
 }
 
 variable "zone_name" {
