@@ -5,9 +5,7 @@ variable "ip_configuration_subnet_id" {
 variable "zone_name" {
   default = "srikanth553.store"
 }
-variable "location" {
-  default = "Uk West"
-}
+
 variable "rg_name" {
   default = "rg-devops"
 }
