@@ -76,7 +76,8 @@ inline = [
 resource "azurerm_dns_a_record" "dns_record" {
   name                = "${var.name}-dev"
   zone_name           = var.zone_name
-  resource_group_name = "rg-devops"
+  # resource_group_name = "rg-devops"
+  resource_group_name = var.dns_record_rg_name
   ttl                 = 3
   records             = [azurerm_network_interface.privateip.private_ip_address]
 }
