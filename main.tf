@@ -7,7 +7,7 @@ module "resource-group" {
 
 module "databases" {
   for_each                   = var.databases
-  source                     = "modules/vm"
+  source                     = "./modules/vm"
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
   name                       = each.key
   rg_name                    = module.resource-group[each.value["rgname"]].name
@@ -28,11 +28,4 @@ module "databases" {
 #   zone_name                  = var.zone_name
 #   network_security_group_id  = var.network_security_group_id
 # }
-
-module "resource-group" {
-  for_each = var.rg_name
-  source   = "./modules/resource-group"
-  name     = "$(each.key)-${var.env}"
-  location = each.value ["location"]
-  }
 
