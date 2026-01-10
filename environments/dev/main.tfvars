@@ -7,16 +7,16 @@ network_security_group_id = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308
 databases =  {
   default = {
     mongodb  = {
-        rgname = "ukwest"
+        rgname = "ukwest-dev"
     }
     rabbitmq = {
-        rgname = "ukwest"
+        rgname = "ukwest-dev"
     }
     mysql    = {
-        rgname = "ukwest"
+        rgname = "ukwest-dev"
     }
     redis    = {
-        rgname = "ukwest"
+        rgname = "ukwest-dev"
     }
   }
 }
