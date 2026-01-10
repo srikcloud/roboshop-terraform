@@ -1,5 +1,5 @@
 env = "dev"
-rg_location = "UK West"
+rg_location = "ukwest"
 ip_configuration_subnet_id = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-roboshop/providers/Microsoft.Network/virtualNetworks/roboshop-network/subnets/default"
 zone_name                  = "srikanth553.store"
 storage_image_reference_id = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308/resourceGroups/rg-roboshop/providers/Microsoft.Compute/images/local-devops-practice"
@@ -7,16 +7,16 @@ network_security_group_id = "/subscriptions/f7fcf972-1a3d-456c-a347-914d12f8c308
 databases =  {
   default = {
     mongodb  = {
-        rgname = "ukwest-dev"
+        rgname = "ukwest"
     }
     rabbitmq = {
-        rgname = "ukwest-dev"
+        rgname = "ukwest"
     }
     mysql    = {
-        rgname = "ukwest-dev"
+        rgname = "ukwest"
     }
     redis    = {
-        rgname = "ukwest-dev"
+        rgname = "ukwest"
     }
   }
 }
