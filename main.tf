@@ -4,7 +4,6 @@ module "resource-group" {
   name     = "${each.key}-${var.env}"
   location = each.value ["location"]
   }
-
 module "databases" {
   for_each                   = var.databases
   source                     = "./modules/vm"
