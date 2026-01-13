@@ -42,8 +42,8 @@ resource "azurerm_virtual_machine" "vm" {
   }
   os_profile {
     computer_name  = var.name
-    admin_username = "azureuser"
-    admin_password = "DevOps@123456"
+    admin_username = data.vault_generic_secret.ssh.data["username"]
+    admin_password = data.vault_generic_secret.ssh.data["password"]
   }
  os_profile_linux_config {
     disable_password_authentication = false
