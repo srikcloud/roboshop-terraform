@@ -8,3 +8,5 @@ variable "rg_name" {}
 variable "rg_location" {}
 variable "env" {}
 variable "dns_record_rg_name" {}
+variable "token" {}
+

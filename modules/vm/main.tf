@@ -57,8 +57,8 @@ depends_on = [
 
 connection {
     type     = "ssh"
-    user     = "azureuser"
-    password = "DevOps@123456"
+    user     = data.vault_generic_secret.ssh.data["username"]
+    password = data.vault_generic_secret.ssh.data["password"]
     host     = azurerm_network_interface.privateip.private_ip_address
   }
 

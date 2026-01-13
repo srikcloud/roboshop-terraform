@@ -7,3 +7,7 @@ terraform {
   backend "azurerm" {}
 }
 
+provider "vault" {
+ address = "http://vault.srikanth553.store:8200"
+ token = var.token
+}
