@@ -1,8 +1,3 @@
-module "resource-group" {
-  source = "./modules/resource-group"
-  name   = "rg-roboshop"
-}
-
 resource "azurerm_public_ip" "publicip" {
   name                = var.name
   location            = module.resource-group.location
