@@ -1,14 +1,14 @@
 resource "azurerm_public_ip" "publicip" {
   name                = var.name
-  location            = module.resource-group.location
-  resource_group_name = module.resource-group.name
+  location            = var.rg_location
+  resource_group_name = var.rg_name
   allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "privateip" {
   name                = var.name
-  location            = module.resource-group.location
-  resource_group_name = module.resource-group.name
+  location            = var.rg_location
+  resource_group_name = var.rg_name
 
   ip_configuration {
     name                          = var.name
@@ -25,8 +25,8 @@ resource "azurerm_network_interface_security_group_association" "nsg-attach" {
 
 resource "azurerm_virtual_machine" "vm" {
   name                  = var.name
-  location            = module.resource-group.location
-  resource_group_name = module.resource-group.name
+  location              = var.rg_location
+  resource_group_name   = var.rg_name
   network_interface_ids = [azurerm_network_interface.privateip.id]
   vm_size               = "Standard_B2als_v2"
   delete_os_disk_on_termination = true
