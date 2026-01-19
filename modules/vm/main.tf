@@ -1,14 +1,19 @@
+module "rg" {
+  source = "./modules/rg"
+  name   = "rg-roboshop"
+}
+
 resource "azurerm_public_ip" "publicip" {
   name                = var.name
-  location            = var.rg_location
-  resource_group_name = var.rg_name
+  location            = module.rg.location
+  resource_group_name = module.rg.name
   allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "privateip" {
   name                = var.name
-  location            = var.rg_location
-  resource_group_name = var.rg_name
+  location            = module.rg.location
+  resource_group_name = module.rg.name
 
   ip_configuration {
     name                          = var.name
@@ -25,8 +30,8 @@ resource "azurerm_network_interface_security_group_association" "nsg-attach" {
 
 resource "azurerm_virtual_machine" "vm" {
   name                  = var.name
-  location              = var.rg_location
-  resource_group_name   = var.rg_name
+  location            = module.rg.location
+  resource_group_name = module.rg.name
   network_interface_ids = [azurerm_network_interface.privateip.id]
   vm_size               = "Standard_B2als_v2"
   delete_os_disk_on_termination = true
