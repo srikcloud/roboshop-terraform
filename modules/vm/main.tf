@@ -1,5 +1,5 @@
 module "rg" {
-  source = "./modules/rg"
+  source = "./modules/resource-group"
   name   = "rg-roboshop"
 }
 
