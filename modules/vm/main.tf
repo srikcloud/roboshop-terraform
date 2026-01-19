@@ -62,7 +62,7 @@ connection {
     host     = azurerm_network_interface.privateip.private_ip_address
   }
 
-provisioner "remote-exec"{
+provisioner "remote-exec" {
 inline = [
     "sudo dnf install -y epel-release",
     "sudo dnf install -y ansible hvac",
