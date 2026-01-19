@@ -65,10 +65,10 @@ connection {
 provisioner "remote-exec"{
 inline = [
     "sudo dnf install -y epel-release",
-    "sudo dnf install -y ansible",
+    "sudo dnf install -y ansible hvac",
     "sudo dnf install python3.12 python3.12-pip -y",
     "sudo pip3.12 install ansible",
-    "ansible-pull -i localhost, -U https://github.com/srikcloud/roboshop-ansible roboshop.yml -e app_name=${var.name} -e env=dev -e token=$(var.token)"
+    "ansible-pull -i localhost, -U https://github.com/srikcloud/roboshop-ansible roboshop.yml -e role_name=${local.role_name} -e app_name=${var.name} -e env=dev -e token=$(var.token)"
 
     ]
 }
