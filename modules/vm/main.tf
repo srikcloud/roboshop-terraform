@@ -62,43 +62,15 @@ connection {
     host     = azurerm_network_interface.privateip.private_ip_address
   }
 
-# provisioner "remote-exec" {
-# inline = [
-#     "sudo dnf install -y epel-release",
-#     "sudo dnf install -y ansible hvac",
-#     "sudo dnf install python3.12 python3.12-pip -y",
-#     "sudo pip3.12 install ansible",
-#     "ansible-pull -i localhost, -U https://github.com/srikcloud/roboshop-ansible roboshop.yml -e role_name=${local.role_name} -e app_name=${var.name} -e env=dev -e token=${var.token}"
-
-#     ]
-# }
-
 provisioner "remote-exec" {
-  inline = [
-    "set -euxo pipefail",
-
-    # Enable repos
-    "sudo dnf install -y epel-release",
-
-    # REQUIRED system dependencies for pip
-    "sudo dnf install -y ansible python3-pip gcc python3-devel libffi-devel openssl-devel redhat-rpm-config",
-
-    # Upgrade pip safely
-    "sudo pip3 install --upgrade pip setuptools wheel",
-
-    # Install python libs for ansible
-    "sudo pip3 install requests hvac",
-
-    # Validate
-    "python3 -c \"import requests, hvac\"",
-    "ansible --version",
-
-    # Run ansible pull
-    "ansible-pull -i localhost, -U https://github.com/srikcloud/roboshop-ansible roboshop.yml -e role_name=${local.role_name} -e app_name=${var.name} -e env=dev -e token=${var.token}"
-  ]
+    inline = [
+      "sudo dnf install python3.12 python3.12-pip -y",
+      "sudo pip3.12 install ansible hvac",
+      "ansible-pull -i localhost, -U https://github.com/srikcloud/roboshop-ansible roboshop.yml -e role_name=${local.role_name} -e app_name=${var.name} -e env=dev -e token=${var.token}"
+    ]
+  }
 }
 
-}
 resource "azurerm_dns_a_record" "dns_record" {
   name                = "${var.name}-dev"
   zone_name           = var.zone_name
