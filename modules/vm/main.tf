@@ -72,23 +72,28 @@ connection {
 
 #     ]
 # }
+
 provisioner "remote-exec" {
   inline = [
     "set -euxo pipefail",
 
-    # Base setup
+    # Enable repos
     "sudo dnf install -y epel-release",
-    "sudo dnf install -y ansible python3-pip",
 
-    # Python deps for Ansible modules
-    "sudo pip3 install --upgrade pip",
-    "sudo pip3 install hvac",
+    # REQUIRED system dependencies for pip
+    "sudo dnf install -y ansible python3-pip gcc python3-devel libffi-devel openssl-devel redhat-rpm-config",
 
-    # Verify
+    # Upgrade pip safely
+    "sudo pip3 install --upgrade pip setuptools wheel",
+
+    # Install python libs for ansible
+    "sudo pip3 install requests hvac",
+
+    # Validate
+    "python3 -c \"import requests, hvac\"",
     "ansible --version",
-    "python3 -c \"import hvac\"",
 
-    # Run pull
+    # Run ansible pull
     "ansible-pull -i localhost, -U https://github.com/srikcloud/roboshop-ansible roboshop.yml -e role_name=${local.role_name} -e app_name=${var.name} -e env=dev -e token=${var.token}"
   ]
 }
